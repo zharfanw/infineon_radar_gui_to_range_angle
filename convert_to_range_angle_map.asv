@@ -72,11 +72,11 @@ BW = (Radar_Parameter.Upper_RF_Frequency_kHz-Radar_Parameter.Lower_RF_Frequency_
 range_res = c/(2*BW);
 max_range = range_res*fix(Radar_Parameter.Sampling_Frequency_kHz*1e3/CRR)/2;
 
-% t4 = [30 35 45 60 90 135 200 270]*pi/180;
-% r4 = [0.8:0.4:2.8 3:0.2:4];
+t4 = [30 35 45 60 90 135 200 270]*pi/180;
+r4 = [0.8:0.4:2.8 3:0.2:4];
 
-t4 = linspace(deg2rad(0),deg2rad(2*max_angle_degrees),4);
-r4 = linspace(0,2,4);
+r4 = linspace(0,max_range,4);
+r4 = linspace(0,max_range,4);
 
 %% Create The Model
 doppler_modelnya = helper_model_doppler_algo(config_chirp_num_samples, config_num_chirps, num_rx_antennas,mti_alpha);
