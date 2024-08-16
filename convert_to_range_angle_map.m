@@ -5,8 +5,8 @@ close all
 %% Load Raw Radar Data
 % Talking Condition
 anal_name = "mat_Talking_1";
-datasetnya = readNPY(".dataset\Data22_25\Measurement 25042024\BGT60TR13C_record_2504202420240425-101640\RadarIfxAvian_00\radar.npy");
-conf_fname =         '.dataset\Data22_25\Measurement 25042024\BGT60TR13C_record_2504202420240425-101640\RadarIfxAvian_00\config.json'; 
+datasetnya = readNPY(".dataset\BGT60TR13C_record_220240423-143957\RadarIfxAvian_00\radar.npy");
+conf_fname =         '.dataset\BGT60TR13C_record_220240423-143957\RadarIfxAvian_00\config.json'; 
 
 conf_fid = fopen(conf_fname); 
 conf_raw = fread(conf_fid,inf); 
@@ -63,6 +63,14 @@ num_beams = 27;
 max_angle_degrees = 40 ;
 mti_alpha = 0.8;
 d_by_lambda = 0.5;
+
+c = 3e8; % Speed of light (m/s)
+CRR = 1/Radar_Parameter.Chirp_Time_sec; % Chirp repetition rate (Hz)
+% FRR=1/Radar_Parameter.Frame_Period_sec;% Frame repetition rate (Hz)
+BW = (Radar_Parameter.Upper_RF_Frequency_kHz-Radar_Parameter.Lower_RF_Frequency_kHz)*1000; % Bandwidth (Hz)
+
+range_res = c/(2*BW);
+max_range = range_res*fix(Radar_Parameter.Sampling_Frequency_kHz*1e3/CRR)/2;
 
 %% Create The Model
 doppler_modelnya = helper_model_doppler_algo(config_chirp_num_samples, config_num_chirps, num_rx_antennas,mti_alpha);
