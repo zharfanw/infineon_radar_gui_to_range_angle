@@ -1,25 +1,62 @@
-# infineon_radar_gui_to_range_angle
- Convert Raw Data to range angle map with MATLAB or Python. But recommend using MATLAB.
- 
-open `./convert_to_range_angle_map.m`
 
-edit line below for set dataset path
+## Converting Infineon Radar Raw Data to Range-Angle Map using MATLAB
 
-    datasetnya  =  readNPY("sample_raw_radar_data\RadarIfxAvian_00\radar.npy");
-    conf_fname  =  'sample_raw_radar_data\RadarIfxAvian_00\config.json';
+### Overview
 
-for edit frame index   
+This guide outlines the process of converting raw radar data from an Infineon radar sensor into a range-angle map using MATLAB. The provided MATLAB script,  `convert_to_range_angle_map.m`, serves as a starting point.
 
-    start_frame  =  1;
-    last_frame  =  99;
+### Steps Involved
 
-  
-for editing angle Aqusition
+1.  **Load Raw Data**:
+    
+    -   Open the MATLAB script `convert_to_range_angle_map.m`.
+    -   Specify the path to your raw radar data file (`.npy` format) and configuration file (`.json` format) in the following lines:
+        
+        Matlab
+        
+        ```
+        datasetnya = readNPY("sample_raw_radar_data\RadarIfxAvian_00\radar.npy");
+        conf_fname = 'sample_raw_radar_data\RadarIfxAvian_00\config.json';
+        
+        ```
+        
+        Use code [with caution.](/faq#coding)
+        
+2.  **Define Frame Range**:
+    
+    -   Specify the starting and ending frame indices for processing:
+        
+        Matlab
+        
+        ```
+        start_frame = 1;
+        last_frame = 99;
+        
+        ```
+        
+        Use code [with caution.](/faq#coding)
+        
+3.  **Set Angle Acquisition Range**:
+    
+    -   Define the desired angle range for the map:
+        
+        Matlab
+        
+        ```
+        start_angle = -90;
+        stop_angle = 90;
+        
+        ```
+        
+        Use code [with caution.](/faq#coding)
+        
 
-    start_angle  =  -90;
-    stop_angle  =  90;
+### Additional Considerations
 
-
+-   **Data Structure**: The script assumes the raw data is stored in a NumPy array (`.npy` format) and the configuration data is in a JSON file.
+-   **Configuration File**: The configuration file likely contains information about the radar sensor, such as antenna layout, sampling frequency, and other relevant parameters. These parameters are essential for accurate range-angle mapping.
+-   **Processing Algorithm**: The core algorithm for converting raw data to a range-angle map is not provided in the snippet. You'll need to implement this based on the radar sensor's characteristics and desired output format.
+-   **Visualization**: Once the range-angle map is generated, consider using MATLAB's plotting functions to visualize the results.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2MTM2MDE3NV19
+eyJoaXN0b3J5IjpbMTQzMjIzNzQ5NiwyMDYxMzYwMTc1XX0=
 -->
