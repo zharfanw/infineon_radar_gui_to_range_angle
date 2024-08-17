@@ -120,7 +120,8 @@ pip install -r requirements.txt
 
 ```
 
+**3. Load Raw Data**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTg5MjEzMDcsLTE1NjIxMDA0MzAsMT
-QzMjIzNzQ5NiwyMDYxMzYwMTc1XX0=
+eyJoaXN0b3J5IjpbLTEzNzU0MjM0OTIsLTEzOTg5MjEzMDcsLT
+E1NjIxMDA0MzAsMTQzMjIzNzQ5NiwyMDYxMzYwMTc1XX0=
 -->
