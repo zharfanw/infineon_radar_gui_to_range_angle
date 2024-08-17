@@ -3,10 +3,14 @@ clear all
 close all
 
 %% Load Raw Radar Data
-% Talking Condition
-anal_name = "mat_Talking_1";
-datasetnya = readNPY(".dataset\BGT60TR13C_record_220240423-143957\RadarIfxAvian_00\radar.npy");
-conf_fname =         '.dataset\BGT60TR13C_record_220240423-143957\RadarIfxAvian_00\config.json'; 
+datasetnya = readNPY("sample_raw_radar_data\RadarIfxAvian_00\radar.npy");
+conf_fname =         'sample_raw_radar_data\RadarIfxAvian_00\config.json'; 
+
+start_frame = 1;
+last_frame = 99;
+
+start_angle = -90;
+stop_angle =  90;
 
 conf_fid = fopen(conf_fname); 
 conf_raw = fread(conf_fid,inf); 
@@ -75,8 +79,9 @@ max_range = range_res*fix(Radar_Parameter.Sampling_Frequency_kHz*1e3/CRR)/2;
 % t4 = [30 35 45 60 90 135 200 270]*pi/180;
 % r4 = [0.8:0.4:2.8 3:0.2:4];
 
-t4 = linspace(deg2rad(0),deg2rad(2*max_angle_degrees),4);
-r4 = linspace(0,2,4);
+t4 = linspace(deg2rad(start_angle),deg2rad(stop_angle),4);
+% r4 = linspace(0,max_range,10);
+r4 = 0:0.25:max_range;
 
 %% Create The Model
 doppler_modelnya = helper_model_doppler_algo(config_chirp_num_samples, config_num_chirps, num_rx_antennas,mti_alpha);
@@ -85,18 +90,29 @@ dbf_modelnya = helper_model_DigitalBeamForming(num_rx_antennas, num_beams, max_a
 
 
 
-raw_i = 1; % First Index of Frame
+raw_i = start_frame; % First Index of Frame
 end_raw_i = dummy_size(1); % Last Index of Frame
+if(dummy_size(1) > last_frame)
+    end_raw_i = last_frame; % Last Index of Frame
+end
+
 % 
-figure("Name","Range Angle Map")
+figure("Name","Range Angle Map",'color','white')
+grid off
+axprop = {'DataAspectRatio',[1 1 8],'View', [-12 38], ...
+          'XTick',[],    'YTick',[], ...
+          'XColor','none','YColor','none' ...
+          };
+
+
 while raw_i<end_raw_i
     % Get frame data
     frame = squeeze(Frame(raw_i,:, :, :));
 
     % Initialize variables
     rd_spectrum = zeros(config_chirp_num_samples, 2 * config_num_chirps, num_rx_antennas);
+    beam_range_energy = zeros(config_chirp_num_samples, num_beams);
     % beam_range_energy = zeros(config_chirp_num_samples*2, num_beams);
-    beam_range_energy = zeros(config_chirp_num_samples*2, num_beams);
 
     for i_ant = 1:num_rx_antennas  % Loop through antennas (1-based indexing in MATLAB)
         % Current RX antenna
@@ -117,7 +133,8 @@ while raw_i<end_raw_i
         doppler_i = rd_beam_formed(:, :, i_beam);
 
         % Beamforming - accumulate energy across range bins
-        beam_range_energy(:, i_beam) = sum(abs(doppler_i), 1) / sqrt(num_beams);
+        % dummy_beam = sum(abs(doppler_i), 1) / sqrt(num_beams);
+        beam_range_energy(:, i_beam) = beam_range_energy(:, i_beam) + sum(abs(doppler_i).^2, 2) / sqrt(num_beams);
     end
 
     % Maximum energy in Range-Angle map
@@ -138,14 +155,26 @@ while raw_i<end_raw_i
     % colormap default
     % colorbar
     % hold on
-
+    
     polarplot3d(beam_range_energy, ...
+        'PlotType','surfcn',...
         'radialrange',[min(r4) max(r4)],...
         'angularrange',[min(t4) max(t4)], ...
-        'polargrid',{r4 t4} ...
+        'polargrid',{r4 t4}, ...
+        'RadLabelLocation',{45 'max'} ...
     );
-    % view([-18 76]);
+    grid off
     view(2);
+    set(gca, ...
+        'dataaspectratio',[1 1 1], ...
+        'view',[-90 90], ...
+        'XTick',[], ...
+        'XColor','none'...
+    );
+    ylabel("Range (m)")
+    fprintf("Frame - %i of %i \n",raw_i,dummy_size(1))
+    % view([-18 76]);
+    % view(2);
 
     drawnow
     raw_i = raw_i + 1;

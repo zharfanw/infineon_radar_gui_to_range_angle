@@ -144,7 +144,6 @@ polar_axs.set_yticklabels(np.arange(0, max_range , 0.5))  # Label kustom
 polar_axs.set_xlabel("X LABEL")  # Label kustom
 polar_axs.set_ylabel("Y LABEL")  # Label kustom
 polar_axs.set_label("JUST LABEL")  # Label kustom
-polar_axs.ThetaAxis.set_label_text("JANCOK")
 
 
 
@@ -162,7 +161,7 @@ plt.text(0.1,0.1, 'I am cartesian coordinate', transform=plt.gcf().transFigure)
 
 # Fungsi animasi
 def animate(i):
-    print("Frame ",end=": ");print(i)
+    # print("Frame ",end=": ");print(i)
     frame = datanya[i]
     polar_axs.set_title("Polar Angle Map Frame : "+str(i))
     rd_spectrum = np.zeros((samples_num, 2 * chirp_num, num_ant), dtype=complex)
@@ -179,8 +178,10 @@ def animate(i):
 
     # Compute Range-Angle map
     rd_beam_formed = dbf.run(rd_spectrum)
+    # print(np.shape(rd_beam_formed))
     for i_beam in range(num_beams):
         doppler_i = rd_beam_formed[:, :, i_beam]
+        # print(np.shape(doppler_i))
         beam_range_energy[:, i_beam] += np.linalg.norm(doppler_i, axis=1) / np.sqrt(num_beams)
 
     # Maximum energy in Range-Angle map
@@ -192,6 +193,7 @@ def animate(i):
     # improve this algorithm.
     scale = 150
     beam_range_energy = scale * (beam_range_energy / max_energy - 1)
+    # print(np.shape(beam_range_energy))
     beam_range_energy = np.transpose(beam_range_energy)
 
     # Find dominant angle of target

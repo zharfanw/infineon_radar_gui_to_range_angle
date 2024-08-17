@@ -30,7 +30,7 @@ clc
 
 % Definisikan jari-jari dan sudut
 r = linspace(0, 2, 20);
-theta = linspace(-(1/2)*pi, (1/2)*pi, 91);
+theta = linspace(0, 2*pi, 91);
 
 % Buat matriks jari-jari dan sudut
 [R, THETA] = meshgrid(r, theta);
@@ -43,9 +43,13 @@ y = R .* sin(THETA);
 z = R .* sin(2*THETA);
 
 % Buat plot polar mesh
-surf(x, y, z);
+surf(x, y, z,'EdgeColor', 'none');
 xlabel('x');
 ylabel('y');
 zlabel('z');
 title('Plot Polar Mesh');
 view(2)
+
+% Tambahkan label untuk radius dan sudut
+text(1.5, 0, 2, 'Radius', 'FontSize', 12);
+text(0, 1.5, 2, 'Sudut', 'FontSize', 12);
