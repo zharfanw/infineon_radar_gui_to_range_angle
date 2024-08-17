@@ -54,7 +54,7 @@ This guide outlines the process of converting raw radar data from an Infineon ra
 
 
 ## Converting Raw Data to Range-Angle Map with Python
-
+![enter image description here](py_figure.png)
 
 ### Prerequisites
 
@@ -139,7 +139,7 @@ conf_fname  =  "sample_raw_radar_data/RadarIfxAvian_00/config.json"
 -   **Processing Algorithm**: The core algorithm for converting raw data to a range-angle map is not provided in the snippet. You'll need to implement this based on the radar sensor's characteristics and desired output format.
 -   **Visualization**: Once the range-angle map is generated, consider using MATLAB's plotting functions to visualize the results.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3Njc2Mjk1OSwxNjAyODcxNzE0LDIwOT
-MyNzQyMjMsLTE1MDI4ODI1NjYsLTEzOTg5MjEzMDcsLTE1NjIx
-MDA0MzAsMTQzMjIzNzQ5NiwyMDYxMzYwMTc1XX0=
+eyJoaXN0b3J5IjpbLTE2MjU3NDMzMDUsMTYwMjg3MTcxNCwyMD
+kzMjc0MjIzLC0xNTAyODgyNTY2LC0xMzk4OTIxMzA3LC0xNTYy
+MTAwNDMwLDE0MzIyMzc0OTYsMjA2MTM2MDE3NV19
 -->
