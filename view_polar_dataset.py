@@ -12,9 +12,12 @@ from helpers.DigitalBeamForming import *
 
 
 # open Dataset 
-datasetnya = ".dataset/BGT60TR13C_record_220240423-143957/RadarIfxAvian_00/radar.npy"
-conf_fname =         '.dataset/BGT60TR13C_record_220240423-143957/RadarIfxAvian_00/config.json'
+datasetnya = "sample_raw_radar_data/RadarIfxAvian_00/radar.npy"
+conf_fname = 'sample_raw_radar_data/RadarIfxAvian_00/config.json'
 
+# Set Angle Map
+start_th = -np.pi/2
+stop_th = np.pi/2
 
 # Membuka file JSON
 with open(conf_fname, 'r') as f:
@@ -107,8 +110,7 @@ r = np.linspace(0, max_range , samples_num)
 
 # start_th = -(1/4)*np.pi
 # stop_th = (1/4)*np.pi
-start_th = -np.pi/2
-stop_th = np.pi/2
+
 rot_th = np.pi/2
 
 theta = np.linspace(start_th, stop_th, num_beams)
