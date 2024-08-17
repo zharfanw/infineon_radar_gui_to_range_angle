@@ -15,10 +15,11 @@ for edit frame index
 
   
 for editing angle Aqusition
-start_angle  =  -90;
-stop_angle  =  90;
+
+    start_angle  =  -90;
+    stop_angle  =  90;
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTUzNDYwNDddfQ==
+eyJoaXN0b3J5IjpbMjA2MTM2MDE3NV19
 -->
