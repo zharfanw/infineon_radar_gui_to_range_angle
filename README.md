@@ -57,8 +57,70 @@ This guide outlines the process of converting raw radar data from an Infineon ra
 -   **Visualization**: Once the range-angle map is generated, consider using MATLAB's plotting functions to visualize the results.
 ## Converting Infineon Radar Raw Data to Range-Angle Map using PYTHON
 
+## Converting Raw Data to Range-Angle Map with Python
+
+### Prerequisites
+
+-   **Python 3.12 or later**
+-   **Basic understanding of Python programming**
+
+### Setting Up the Environment
+
+**1. Create a Virtual Environment**
+
+-   **Windows:**
+    
+    Bash
+    
+    ```
+    python -m venv venv
+    venv\Scripts\activate
+    
+    ```
+    
+    Use code [with caution.](/faq#coding)
+    
+-   **macOS/Linux:**
+    
+    Bash
+    
+    ```
+    python3 -m venv venv
+    source venv/bin/activate
+    
+    ```
+    
+    
+
+**2. Install Required Packages**
+
+[](https://github.com/parthahere001/instagram-stats-visualizer)
+
+1. github.com
+
+[](https://github.com/parthahere001/instagram-stats-visualizer)
+
+github.com
+
+Create a `requirements.txt` file in your project directory with the following content:
+
+```
+numpy
+scipy
+matplotlib
+
+```
+
+Then install the packages:
+
+Bash
+
+```
+pip install -r requirements.txt
+
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk2MjgyNTU3LC0xNTYyMTAwNDMwLDE0Mz
-IyMzc0OTYsMjA2MTM2MDE3NV19
+eyJoaXN0b3J5IjpbLTEzOTg5MjEzMDcsLTE1NjIxMDA0MzAsMT
+QzMjIzNzQ5NiwyMDYxMzYwMTc1XX0=
 -->
