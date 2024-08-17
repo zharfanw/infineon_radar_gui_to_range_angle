@@ -55,7 +55,10 @@ This guide outlines the process of converting raw radar data from an Infineon ra
 -   **Configuration File**: The configuration file likely contains information about the radar sensor, such as antenna layout, sampling frequency, and other relevant parameters. These parameters are essential for accurate range-angle mapping.
 -   **Processing Algorithm**: The core algorithm for converting raw data to a range-angle map is not provided in the snippet. You'll need to implement this based on the radar sensor's characteristics and desired output format.
 -   **Visualization**: Once the range-angle map is generated, consider using MATLAB's plotting functions to visualize the results.
+## Converting Infineon Radar Raw Data to Range-Angle Map using PYTHON
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2OTM3OTg5OCwtMTU2MjEwMDQzMCwxND
-MyMjM3NDk2LDIwNjEzNjAxNzVdfQ==
+eyJoaXN0b3J5IjpbODk2MjgyNTU3LC0xNTYyMTAwNDMwLDE0Mz
+IyMzc0OTYsMjA2MTM2MDE3NV19
 -->
