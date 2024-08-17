@@ -49,12 +49,8 @@ This guide outlines the process of converting raw radar data from an Infineon ra
         
         
 
-### Additional Considerations
 
--   **Data Structure**: The script assumes the raw data is stored in a NumPy array (`.npy` format) and the configuration data is in a JSON file.
--   **Configuration File**: The configuration file likely contains information about the radar sensor, such as antenna layout, sampling frequency, and other relevant parameters. These parameters are essential for accurate range-angle mapping.
--   **Processing Algorithm**: The core algorithm for converting raw data to a range-angle map is not provided in the snippet. You'll need to implement this based on the radar sensor's characteristics and desired output format.
--   **Visualization**: Once the range-angle map is generated, consider using MATLAB's plotting functions to visualize the results.
+
 ## Converting Infineon Radar Raw Data to Range-Angle Map using PYTHON
 
 ## Converting Raw Data to Range-Angle Map with Python
@@ -139,8 +135,14 @@ conf_fname  =  "sample_raw_radar_data/RadarIfxAvian_00/config.json"
         start_th  =  -np.pi/2
         stop_th  =  np.pi/2
         ```
-        
+## Additional Considerations
+
+-   **Data Structure**: The script assumes the raw data is stored in a NumPy array (`.npy` format) and the configuration data is in a JSON file.
+-   **Configuration File**: The configuration file likely contains information about the radar sensor, such as antenna layout, sampling frequency, and other relevant parameters. These parameters are essential for accurate range-angle mapping.
+-   **Processing Algorithm**: The core algorithm for converting raw data to a range-angle map is not provided in the snippet. You'll need to implement this based on the radar sensor's characteristics and desired output format.
+-   **Visualization**: Once the range-angle map is generated, consider using MATLAB's plotting functions to visualize the results.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDI4ODI1NjYsLTEzOTg5MjEzMDcsLT
-E1NjIxMDA0MzAsMTQzMjIzNzQ5NiwyMDYxMzYwMTc1XX0=
+eyJoaXN0b3J5IjpbMjA5MzI3NDIyMywtMTUwMjg4MjU2NiwtMT
+M5ODkyMTMwNywtMTU2MjEwMDQzMCwxNDMyMjM3NDk2LDIwNjEz
+NjAxNzVdfQ==
 -->
