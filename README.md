@@ -124,17 +124,14 @@ pip install -r requirements.txt
 -   Open the Python script `view_polar_dataset.py`.
     -   Specify the path to your raw radar data file (`.npy` format) and configuration file (`.json` format) in the following lines:
         
-        Python
-        
-        
-    
-
-        # open Dataset
-            datasetnya  =  "sample_raw_radar_data/RadarIfxAvian_00/radar.npy"
-    conf_fname  =  "sample_raw_radar_data/RadarIfxAvian_00/config.json"
-            
+        Python    
+```
+# open Dataset
+datasetnya  =  "sample_raw_radar_data/RadarIfxAvian_00/radar.npy"
+conf_fname  =  "sample_raw_radar_data/RadarIfxAvian_00/config.json"
+  ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5ODcyMTk3LC0xMzk4OTIxMzA3LC0xNT
-YyMTAwNDMwLDE0MzIyMzc0OTYsMjA2MTM2MDE3NV19
+eyJoaXN0b3J5IjpbMTQ4MjU1MzgwOSwtMTM5ODkyMTMwNywtMT
+U2MjEwMDQzMCwxNDMyMjM3NDk2LDIwNjEzNjAxNzVdfQ==
 -->
