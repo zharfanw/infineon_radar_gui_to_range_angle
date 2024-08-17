@@ -130,8 +130,20 @@ pip install -r requirements.txt
 datasetnya  =  "sample_raw_radar_data/RadarIfxAvian_00/radar.npy"
 conf_fname  =  "sample_raw_radar_data/RadarIfxAvian_00/config.json"
   ```
-
+  
+  **4. Define Frame Range**:
+    
+    -   Specify the starting and ending frame indices for processing:
+        
+        Python
+        
+        ```
+        start_th  =  -np.pi/2
+        stop_th  =  np.pi/2
+        
+        ```
+        
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MjU1MzgwOSwtMTM5ODkyMTMwNywtMT
-U2MjEwMDQzMCwxNDMyMjM3NDk2LDIwNjEzNjAxNzVdfQ==
+eyJoaXN0b3J5IjpbNzA2MDg3MjgsLTEzOTg5MjEzMDcsLTE1Nj
+IxMDA0MzAsMTQzMjIzNzQ5NiwyMDYxMzYwMTc1XX0=
 -->
