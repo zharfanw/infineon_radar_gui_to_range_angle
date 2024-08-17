@@ -1,6 +1,8 @@
 
 # Converting Infineon BGT60TR13C Radar Raw Data to Range-Angle MAP
-## Converting I![enter image description here](matlab_figure.png)nfineon Radar Raw Data to Range-Angle Map using MATLAB
+## Converting I![enter image description here](matlab_fignfineon Radar Raw Data to Range-Angle Map using MATLAB
+
+![enter image description here](matlab_figure.png)
 
 ### Overview
 
@@ -139,8 +141,8 @@ conf_fname  =  "sample_raw_radar_data/RadarIfxAvian_00/config.json"
 -   **Processing Algorithm**: The core algorithm for converting raw data to a range-angle map is not provided in the snippet. You'll need to implement this based on the radar sensor's characteristics and desired output format.
 -   **Visualization**: Once the range-angle map is generated, consider using MATLAB's plotting functions to visualize the results.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1OTMzODEzMywtMTYyNTc0MzMwNSwxNj
-AyODcxNzE0LDIwOTMyNzQyMjMsLTE1MDI4ODI1NjYsLTEzOTg5
-MjEzMDcsLTE1NjIxMDA0MzAsMTQzMjIzNzQ5NiwyMDYxMzYwMT
-c1XX0=
+eyJoaXN0b3J5IjpbLTE3NDM4OTA4OTUsLTE2MjU3NDMzMDUsMT
+YwMjg3MTcxNCwyMDkzMjc0MjIzLC0xNTAyODgyNTY2LC0xMzk4
+OTIxMzA3LC0xNTYyMTAwNDMwLDE0MzIyMzc0OTYsMjA2MTM2MD
+E3NV19
 -->
