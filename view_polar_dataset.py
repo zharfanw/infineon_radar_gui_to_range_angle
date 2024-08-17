@@ -143,9 +143,9 @@ polar_axs.set_thetagrids(real_grid,labels=new_grid)
 # polar_axs.set_rlabel_position(45)  # Posisi label radial
 polar_axs.set_rticks(np.arange(0, max_range , 0.5))  # Nilai-nilai untuk label radial
 polar_axs.set_yticklabels(np.arange(0, max_range , 0.5))  # Label kustom
-polar_axs.set_xlabel("X LABEL")  # Label kustom
-polar_axs.set_ylabel("Y LABEL")  # Label kustom
-polar_axs.set_label("JUST LABEL")  # Label kustom
+polar_axs.set_xlabel("Range (m)")  # Label kustom
+# polar_axs.set_ylabel("Y LABEL")  # Label kustom
+# polar_axs.set_label("JUST LABEL")  # Label kustom
 
 
 
@@ -154,7 +154,7 @@ polar_axs.set_label("JUST LABEL")  # Label kustom
 polar_axs.set_thetamin(real_grid_start)  # Batas theta minimum
 polar_axs.set_thetamax(real_grid_stop)  # Batas theta maksimum
 
-plt.text(0.1,0.1, 'I am cartesian coordinate', transform=plt.gcf().transFigure)
+# plt.text(0.1,0.1, 'I am cartesian coordinate', transform=plt.gcf().transFigure)
 
 # plt.gca().set_transform(mtransforms.Affine2D().rotate_deg(45) + plt.gca().transData)
 
